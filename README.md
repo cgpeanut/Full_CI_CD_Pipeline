@@ -10,7 +10,16 @@ This course focuses on using a variety of tools and how they fit together as par
 The Big Picture: 
     - gives you a hands-on introduction to some of the techniques and tools involved in doing CI/CD.
     - gives you an ide of what implementing CI/CD can look like in practice.
-    - 
+    - provides enough knowledge to decide what you many wan tot learn more about. 
+    - shows you technologies and tools thatyou can use to implement CI and CD directly, like CI tools and automated deployment techniques. 
+    - shows you infrastructure tools that are desgned to provide stability in the context of CD.
+```
+
+
+
+
+
+
 ```
 
 
