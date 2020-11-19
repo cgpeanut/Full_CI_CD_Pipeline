@@ -7,12 +7,10 @@ using things like self-healing and autoscaling, and canary deployments.
 
 This course focuses on using a variety of tools and how they fit together as part of the CI/CD pipeline "Big Picture".
 ```
-```
 The Big Picture: 
     - gives you a hands-on introduction to some of the techniques and tools involved in doing CI/CD.
     - gives you an ide of what implementing CI/CD can look like in practice.
     - 
-```
 ```
 
 
