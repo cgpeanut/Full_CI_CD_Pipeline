@@ -12,6 +12,8 @@ The Big Picture:
     - gives you a hands-on introduction to some of the techniques and tools involved in doing CI/CD.
     - gives you an ide of what implementing CI/CD can look like in practice.
     - 
+```
+```
 
 
 Chapter 2: Source Management 
