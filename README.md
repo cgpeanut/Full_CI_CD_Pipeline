@@ -13,9 +13,12 @@ The Big Picture:
     - provides enough knowledge to decide what you many wan tot learn more about. 
     - shows you technologies and tools thatyou can use to implement CI and CD directly, like CI tools and automated deployment techniques. 
     - shows you infrastructure tools that are desgned to provide stability in the context of CD.
+        - Jenkins    - CI/CD
+        - Git        - Source Control Management
+        - Gradle     - Build Automation
+        - Docker     - Containerization
+        - Kubernetes - Orchestration
 ```
-
-
 Chapter 2: Source Management 
 ```
 - Introduction to SCM
@@ -34,6 +37,7 @@ Chapter 3: Build Automation
 - Automated Testing 
 - QUIZ: Build Automation
 - Hands-On: Creating Build Automation with Gradle
+```
 Chapter 4: Continous Integration
 - Ci Overview
 - Installing Jenkins
@@ -41,6 +45,7 @@ Chapter 4: Continous Integration
 - Triggering Git with Git Hooks
 - QUIZ: Continous Integration
 - Hands-On: Building an App as a Frestyle Jenkins Project
+```
 Chapter 5: Continous Delivery
 - Introducing Jenkins Pipelines
 - Jekins Pipeline Stages and Steps
@@ -51,3 +56,4 @@ Chapter 5: Continous Delivery
   Chapter 6: Containers
 - Why Containers?
 - Installing Docker
+```
