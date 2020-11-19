@@ -30,8 +30,20 @@ Chapter 2: Source Management
         - All pieces of automation that need to interact with the source code will use SCM:
             - Continuos Integration(CI) will get the code from SCM
             - SCM will notify the cI server when code needs to be built
+    - Understanding Git-based workflow
+    - Steps involved in order to make changes to the source code and ensure that the change is managed by Git:
+            - cloning
+            - adding 
+            - commiting 
+            - pushing
+            - branching 
+            - merging 
+            - pull requests
 
 - Installing Git
+    - We'll use Git spoecifically GitHub to manage source code for the Train Schedule app.
+
+
 - Creating GitHub Forks
 - Making changes in Gitto
 - Branches and Tags
