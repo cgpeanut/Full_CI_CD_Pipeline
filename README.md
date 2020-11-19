@@ -40,6 +40,7 @@ Chapter 3: Build Automation
 - QUIZ: Build Automation
 - Hands-On: Creating Build Automation with Gradle
 ```
+```
 Chapter 4: Continous Integration
 - Ci Overview
 - Installing Jenkins
@@ -47,6 +48,7 @@ Chapter 4: Continous Integration
 - Triggering Git with Git Hooks
 - QUIZ: Continous Integration
 - Hands-On: Building an App as a Frestyle Jenkins Project
+```
 ```
 Chapter 5: Continous Delivery
 - Introducing Jenkins Pipelines
@@ -59,6 +61,7 @@ Chapter 5: Continous Delivery
 - Why Containers?
 - Installing Docker
 ```
+```
 Chapter 6: Containers
 - Why Containers ?
 - Installing Docker
@@ -70,12 +73,14 @@ Chapter 6: Containers
 - Hands-On: Dockerizing an App
 - Hands-On: Deploying a Container with Jenkins Pipelines
 ```
+```
 Chapter 7: Orchestration
 - Orchestration
 - Creating a Kubernetes Cluster
 - Kubernetes Basics
 - Deploying to Kubernetes with Jenkins
 - Hands-On: Deploying Kubernetes with Jenkins Pipelines
+```
 ```
 Chapter 8: Monitoring 
 - Monitoring
@@ -85,15 +90,18 @@ Chapter 8: Monitoring
 - Alerting
 - Hands-On: Monitoring Kubernetes with Prometheus and Grafana
 ```
+```
 Chapter 9: Self Healing
 - Kubernetes and Self Healing
 - creating Liveness Probes in Kubernetes
 - Hands-On: Setting up Self-Healing Apps in Kubernetes
 ```
+```
 Chapter 10: Autoscaling
 - Kubernetes and Autoscaling 
 - Horizontal Pod Autoscalers in Kubernetes
 - Hands-On: Autoscaling in Kubernetes
+```
 ```
 Chapter 11: Canary Testing 
 - What is Canary Testing ?
@@ -101,11 +109,14 @@ Chapter 11: Canary Testing
 - Kubernetes Canary Testing with Jenkins Pipelines 
 - Hands-On: Canary Deployments with Kubernetes and Jenkins
 ```
+```
 Chapter 12: Fully-Automated Deployment 
 - Fully Automated Deployment 
 - Hands-On: implementing Fully-Automated Deployment in a CD Pipeline
 ```
+```
 Chapter 13: Next Steps
 Nest Steps
+```
 ```
 ```
