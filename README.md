@@ -1,11 +1,16 @@
 # Full_CI_CD_Pipeline
-Chapter1: Implementing a Full CI/CD Pipeline
+Chapter 1: Implementing a Full CI/CD Pipeline
 
 Guide you through the process of building a CI/CD Pipeline using a viriety of tools.  It Begins with basic CI-related concepts, like source control and build automation. Then it moves along to copvering containers,
 orchestration, and monitoring.  Finally, the course covers how to strengthen the stability of yor pipeline
 using things like self-healing and autoscaling, and canary deployments. 
 
 This course focuses on using a variety of tools and how they fit together as part of the CI/CD pipeline "Big Picture".
+
+The Big Picture: 
+    - gives you a hands-on introduction to some of the techniques and tools involved in doing CI/CD.
+    - gives you an ide of what implementing CI/CD can look like in practice.
+    - 
 
 
 Chapter 2: Source Management 
