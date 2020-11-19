@@ -18,7 +18,7 @@ The Big Picture:
   - Gradle     - Build Automation
   - Docker     - Containerization
   - Kubernetes - Orchestration and Stability 
-  - Permitheus/Grafana - Monitoring Tools
+  - Permetheus/Grafana - Monitoring Tools
 ```
 Chapter 2: Source Management 
 ```
@@ -57,4 +57,54 @@ Chapter 5: Continous Delivery
   Chapter 6: Containers
 - Why Containers?
 - Installing Docker
+```
+Chapter 6: Containers
+- Why Containers ?
+- Installing Docker
+- Docker Basics
+- Building a Dockerfile
+- Running Docker in Production
+- Installing Docker on Jenkins
+- Jenkins Pipelines CD and a Dockerized App
+- Hands-On: Dockerizing an App
+- Hands-On: Deploying a Container with Jenkins Pipelines
+```
+Chapter 7: Orchestration
+- Orchestration
+- Creating a Kubernetes Cluster
+- Kubernetes Basics
+- Deploying to Kubernetes with Jenkins
+- Hands-On: Deploying Kubernetes with Jenkins Pipelines
+```
+Chapter 8: Monitoring 
+- Monitoring
+- Installing Prometheus and Grafana
+- Cluster Monitoring
+- Application Monitoring
+- Alerting
+- Hands-On: Monitoring Kubernetes with Prometheus and Grafana
+```
+Chapter 9: Self Healing
+- Kubernetes and Self Healing
+- creating Liveness Probes in Kubernetes
+- Hands-On: Setting up Self-Healing Apps in Kubernetes
+```
+Chapter 10: Autoscaling
+- Kubernetes and Autoscaling 
+- Horizontal Pod Autoscalers in Kubernetes
+- Hands-On: Autoscaling in Kubernetes
+```
+Chapter 11: Canary Testing 
+- What is Canary Testing ?
+- Implementing a Canary Test in Kubernetes
+- Kubernetes Canary Testing with Jenkins Pipelines 
+- Hands-On: Canary Deployments with Kubernetes and Jenkins
+```
+Chapter 12: Fully-Automated Deployment 
+- Fully Automated Deployment 
+- Hands-On: implementing Fully-Automated Deployment in a CD Pipeline
+```
+Chapter 13: Next Steps
+Nest Steps
+```
 ```
