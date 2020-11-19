@@ -17,7 +17,8 @@ The Big Picture:
         - Git        - Source Control Management
         - Gradle     - Build Automation
         - Docker     - Containerization
-        - Kubernetes - Orchestration
+        - Kubernetes - Orchestration and Stability 
+        - Permitheus/Grafana - Monitoring Tools
 ```
 Chapter 2: Source Management 
 ```
