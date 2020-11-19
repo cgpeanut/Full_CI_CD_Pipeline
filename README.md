@@ -13,12 +13,12 @@ The Big Picture:
 - provides enough knowledge to decide what you many wan tot learn more about. 
 - shows you technologies and tools thatyou can use to implement CI and CD directly, like CI tools and automated deployment techniques. 
 - shows you infrastructure tools that are desgned to provide stability in the context of CD.
-    - Jenkins    - CI/CD
-    - Git        - Source Control Management
-    - Gradle     - Build Automation
-    - Docker     - Containerization
-    - Kubernetes - Orchestration and Stability 
-    - Permitheus/Grafana - Monitoring Tools
+  - Jenkins    - CI/CD
+  - Git        - Source Control Management
+  - Gradle     - Build Automation
+  - Docker     - Containerization
+  - Kubernetes - Orchestration and Stability 
+  - Permitheus/Grafana - Monitoring Tools
 ```
 Chapter 2: Source Management 
 ```
