@@ -16,14 +16,8 @@ The Big Picture:
 ```
 
 
-
-
-
-
-```
-
-
 Chapter 2: Source Management 
+```
 - Introduction to SCM
 - Installing Gitt
 - Creating GitHub Forks
@@ -32,6 +26,7 @@ Chapter 2: Source Management
 - Pull Requests
 - QUIZ: Source Code Management 
 - Hands-On: Use Git to make changes to Code
+```
 Chapter 3: Build Automation
 - Introduction to Build Automation
 - Installing Gradle 
