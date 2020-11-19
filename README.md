@@ -23,7 +23,15 @@ The Big Picture:
 ```
 Chapter 2: Source Management 
 - Introduction to SCM
-- Installing Gitt
+    - Source Control Management (SCM) is an important component of our CI/CD Pipeline. 
+        - It's a huge part of daily dev workflow
+            - all code changes made by devs will need to be tracked in SCM
+            - Devs will use SCM to track their chjanges separately and then merge them together
+        - All pieces of automation that need to interact with the source code will use SCM:
+            - Continuos Integration(CI) will get the code from SCM
+            - SCM will notify the cI server when code needs to be built
+
+- Installing Git
 - Creating GitHub Forks
 - Making changes in Gitto
 - Branches and Tags
