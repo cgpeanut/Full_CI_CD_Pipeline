@@ -41,9 +41,7 @@ Chapter 2: Source Management
             - pull requests
 
 - Installing Git
-    - We'll use Git spoecifically GitHub to manage source code for the Train Schedule app.
-
-
+    - We'll use Git specifically GitHub to manage source code for the Train Schedule app.
 - Creating GitHub Forks
 - Making changes in Gitto
 - Branches and Tags
@@ -54,7 +52,25 @@ Chapter 2: Source Management
 ```
 Chapter 3: Build Automation
 - Introduction to Build Automation
+    Build Automation: is the automation of tasks needed in order to process and prepare source code for deployment to production. It is an importmant component of continuous integration.
+    This includes things like:
+        - compiling 
+        - dependency management 
+        - executing automated tests
+        - packaging app for deployment
 - Installing Gradle 
+    Gradle: Build Automation Tool: download Gradle: https://gradle.org
+    - easily installed via package manager: dependencies, java JDK 7 or higher
+    - install instructions https://gradle.org/install
+        $ wget -O ~/grradle-4.7-bin.zip https://services.gradle.org/distributions/gradle-4.7-bin.zip
+
+    - to validate:  gradle --version
+    
+
+
+
+
+
 - Gradle Basics
 - Automated Testing 
 - QUIZ: Build Automation
