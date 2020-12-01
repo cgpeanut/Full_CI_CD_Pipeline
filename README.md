@@ -197,11 +197,9 @@ gradle execute sequence:
  $ ./gradlew sayHello
  $ ./gradlew anotherTask
  $ ./gradlew anotherTask satHello
+ $ ./gradlew nodeSetup
 
 
-
-
-```
 ```
 ```
 
