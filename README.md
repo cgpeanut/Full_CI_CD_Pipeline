@@ -58,15 +58,21 @@ Chapter 3: Build Automation
         - dependency management 
         - executing automated tests
         - packaging app for deployment
-- Installing Gradle 
-    Gradle: Build Automation Tool: download Gradle: https://gradle.org
-    - easily installed via package manager: dependencies, java JDK 7 or higher
-    - install instructions https://gradle.org/install
-        $ wget -O ~/grradle-4.7-bin.zip https://services.gradle.org/distributions/gradle-4.7-bin.zip
 
-    - to validate:  gradle --version
-    
+- Installing Gradle and Gradle Wrapper - after which will allow us to create gradle builds.
 
+$ cd ~/
+$ wget -O ~/gradle-4.7-bin.zip https://services.gradle.org/distributions/gradle-4.7-bin.zip
+$ sudo yum -y install unzip java-1.8.0-openjdk
+$ sudo mkdir /opt/gradle
+$ sudo unzip -d /opt/gradle/ ~/gradle-4.7-bin.zip
+$ sudo vi /etc/profile.d/gradle.s
+
+Gradle: Build Automation Tool: download Gradle: https://gradle.org
+  - easily installed via package manager: dependencies, java JDK 7 or higher
+  - install instructions https://gradle.org/install
+       $ wget -O ~/grradle-4.7-bin.zip https://services.gradle.org/distributions/gradle-4.7-bin.zip
+  - to validate:  gradle --version
 
 
 
