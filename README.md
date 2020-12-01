@@ -215,6 +215,19 @@ gradle execute sequence:
         - Integration Tests - test larger portion of an application that are integrated with each other. 
         - Smoke Tests/Sanity Tests - these are high-level integration test that are very basic, large-scale things like whether or not the application runs, whether aplication enpoints return http 500 errors etc. 
 
+- Running Automated Tests in Gradle:
+    How the tests are run depends on what type of tests you have and the technology used to build them. Generally, automated tests will be run in Gradle as a task that gets executed as part of the build process:
+        - task build
+        - task test
+        - build.dependsOn test
+
+
+
+
+
+
+
+
 
 
 
