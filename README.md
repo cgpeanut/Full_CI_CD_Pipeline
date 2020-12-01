@@ -152,6 +152,7 @@ Gradle is a powerful build automation tool, but in order to use it you need to k
 guide you through the core concepts of Gradle automation, and it will demonstrate creating a simple build.gradle file. After
 completing this lesson, you should have a basic working knowledge of how to implement and execute tasks in Gradle.
 More more information on Gradle, check out the official Gradle site: https://gradle.org
+
 Here is the final build.gradle from the demo:
 
     plugins {
@@ -176,10 +177,33 @@ build.gradle like so:
 
  $ ./gradlew sayHello
 
+gradle execute sequence:
+
+ $ mkdir myproject
+ $ cd myproject
+ $ gradle init -> generates bare minimum files 
+ $ vi build.gradle 
+
+    task sayHello {
+        println 'Hello, World!'
+    }
+
+    task anotherTask << {
+        println 'This is another task'
+    }
+
+    sayHello.dependsOn anotherTask
+
+ $ ./gradlew sayHello
+ $ ./gradlew anotherTask
+ $ ./gradlew anotherTask satHello
 
 
 
 
+```
+```
+```
 
 - Automated Testing 
 - QUIZ: Build Automation
