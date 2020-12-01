@@ -233,67 +233,103 @@ gradle execute sequence:
 ***************************************
 
 Introduction
-Build Automation is an important part of continuous integration, and a necessary component of many automated pipelines. Gradle is a powerful build automation tool. In this lab, we'll step through the process of implementing a basic Gradle build. When we're finished, we'll have a good working knowledge build automation basics in Gradle.
+Build Automation is an important part of continuous integration, and a necessary component of
+many automated pipelines. Gradle is a powerful build automation tool. In this lab, we'll step 
+through the process of implementing a basic Gradle build. When we're finished, we'll have a good 
+working knowledge build automation basics in Gradle.
 
 Prerequisites
-For this lab, we'll need a GitHub account set up and ready to go. That's about it as far as things we need ahead of time. Let's see what we've got ahead of us
+For this lab, we'll need a GitHub account set up and ready to go. That's about it as far as things 
+we need ahead of time. Let's see what we've got ahead of us
 
 The Scenario
-Developers have created the first prototype of a train scheduling app. They need us to create a Gradle build for it. The developers need this build to execute some automated tests that they have written. If the automated tests pass, the build needs to produce a packaged archive that includes the application code and its dependencies. The completed archive should be located in the project folder as dist/trainSchedule.zip.
+Developers have created the first prototype of a train scheduling app. They need us to create a 
+Gradle build for it. The developers need this build to execute some automated tests that they 
+have written. If the automated tests pass, the build needs to produce a packaged archive that 
+includes the application code and its dependencies. The completed archive should be located 
+in the project folder as dist/trainSchedule.zip.
 
 In short, this automation needs to:
 
 Have a build task that can be called to execute the entire build process
 Execute some automated tests (where any testing failures cause the build to fail)
 Package the code and its dependencies into a zip archive called dist/trainSchedule.zip
-A List of Steps
-In order to accomplish this, you will need to perform several steps. We'll number them here, and follow this outline through the lab.
 
-Configure git for ssh authentication with GitHub.com
-Create a personal fork of the sample repository https://github.com/linuxacademy/cicd-pipeline-train-schedule-gradle
-Clone your personal fork from GitHub
-Initialize the project with Gradle
-Create a Gradle build task
-Include the com.moowork.node plugin in the Gradle project
-Execute automated tests as part of the build with the npm_test task
-Create a task to generate a zip archive (dist/trainSchedule.zip) of the files that need to be depoyed to production
-Make sure task dependencies are set up so tasks execute in the correct order
-Commit and push these changes to your GitHub fork
-Configure git for ssh Authentication with GitHub.com
-Once we're logged into the server, we'll find that Git is already installed. It's not configured though, so we'll have to do that before we can go any further. We'll have to run a few git config commands:
+A List of Steps
+In order to accomplish this, you will need to perform several steps. We'll number them here, 
+and follow this outline through the lab.
+
+- Configure git for ssh authentication with GitHub.com
+- Create a personal fork of the sample repository https://github.com/linuxacademy/cicd-pipeline-train-schedule-gradle
+- Clone your personal fork from GitHub
+- Initialize the project with Gradle
+- Create a Gradle build task
+- Include the com.moowork.node plugin in the Gradle project
+- Execute automated tests as part of the build with the npm_test task
+- Create a task to generate a zip archive (dist/trainSchedule.zip) of the files that need to be depoyed to production
+- Make sure task dependencies are set up so tasks execute in the correct order
+- Commit and push these changes to your GitHub fork
+- Configure git for ssh Authentication with GitHub.com
+
+Once we're logged into the server, we'll find that Git is already installed. It's not configured though, so we'll have 
+to do that before we can go any further. We'll have to run a few git config commands:
 
 [cloud_user@$host]$ git config --global user.name "Our Name"
 [cloud_user@$host]$ git config --global user.email "ourname@ourdomain.com"
 [cloud_user@$host]$ ssh-keygen -t rsa -b 4096
 [cloud_user@$host]$ cat /home/cloud_user/.ssh/id_rsa.pub
-Now, over on https://github.com, we can get into our account, in Settings, and go to the SSH and GPG keys in the left-hand menu of our profile page. Let's click on the green New SSH key button, give it a Title of something simple (Like gradle activity). In the Key area, paste in the contents of /home/cloud_user/.ssh/id_rsa.pub, which should still be open in a terminal somewhere with the output of that cat command we ran.
+
+Now, over on https://github.com, we can get into our account, in Settings, and go to the SSH and GPG keys in the 
+left-hand menu of our profile page. Let's click on the green New SSH key button, give it a Title of something simple 
+(Like gradle activity). In the Key area, paste in the contents of /home/cloud_user/.ssh/id_rsa.pub, which should still 
+be open in a terminal somewhere with the output of that cat command we ran.
 
 Create a Personal Fork of the Sample Repository
-The project is sitting up on GitHub, at https://github.com/linuxacademy/cicd-pipeline-train-schedule-gradle. Let's head over there, and click on Fork. When prompted for where to fork this to, pick your own Git repository. Then we'll be dumped into our own https://github.com/ourname/cicd-pipeline-train-schedule-gradle, where ourname is our own username.
+The project is sitting up on GitHub, at https://github.com/linuxacademy/cicd-pipeline-train-schedule-gradle. 
+Let's head over there, and click on Fork. When prompted for where to fork this to, pick your own Git repository. 
+Then we'll be dumped into our own https://github.com/ourname/cicd-pipeline-train-schedule-gradle, where ourname 
+is our own username.
 
 Clone Our Personal Fork from GitHub
-To clone this, we need to click the Clone or download button. We'll get a little Clone with SSH dropdown with a string (git@github.com...) that we need to copy. Back over in our terminal, let's make sure we're in our home directory with a , then paste that string into a git clone command (remembering that ourname needs to be our actual GitHub username):
+To clone this, we need to click the Clone or download button. We'll get a little Clone with SSH dropdown with a 
+string (git@github.com...) that we need to copy. Back over in our terminal, let's make sure we're in our home 
+directory with a , then paste that string into a git clone command (remembering that ourname needs to be our 
+actual GitHub username):
 
 [cloud_user@$host]$ cd ~/
 [cloud_user@$host]$ git clone git@github.com:ourname/cicd-pipeline-train-schedule-gradle.git
-If we've never grabbed anything from GitHub before, we'll be prompted with something about "The authenticity of host...". Just type yes and keep going. We should see the repository copy down to our server.
+
+If we've never grabbed anything from GitHub before, we'll be prompted with something about "The authenticity of host...". 
+Just type yes and keep going. We should see the repository copy down to our server.
 
 Initialize the Project with Gradle
-Once we have the Git repository cloned to our home directory, let's cd into the directory and initialize the Gradle build. We'll check afterward with an ls to see if we've got all the source code:
+Once we have the Git repository cloned to our home directory, let's cd into the directory and initialize the Gradle 
+build. We'll check afterward with an ls to see if we've got all the source code:
 
 [cloud_user@$host]$ cd ~/cicd-pipeline-train-schedule-gradle
 [cloud_user@$host]$ ./gradlew init
 [cloud_user@$host]$ ls -la
+
 Create a Gradle Build
-We have to create a Gradle build, but before that we have to install Gradle itself. That won't be too difficult though, because there's a Gradle wrapper included in the repository. This is essentially a collection of scripts that will install Gradle all by itself. As long as we have Java 7 or later installed, we're good to go. This will make it much easier to install Gradle and run the build of our train scheduling app. There's a file in this repository called gradlew, and that is what we'll use to install Gradle and run gradle commands. To get that process moving, let's build Gradle by executing that script:
+We have to create a Gradle build, but before that we have to install Gradle itself. That won't be too difficult though, 
+because there's a Gradle wrapper included in the repository. This is essentially a collection of scripts that will 
+install Gradle all by itself. As long as we have Java 7 or later installed, we're good to go. This will make it much 
+easier to install Gradle and run the build of our train scheduling app. There's a file in this repository called gradlew, 
+and that is what we'll use to install Gradle and run gradle commands. To get that process moving, let's build Gradle by 
+executing that script:
 
 [cloud_user@$host]$ ./gradlew build
-When we run it, we'll see that it's actually installing Gradle. That will only happen this first time though, because Gradle isn't currently installed on our system. The script doesn't do much else, because we haven't actually set up the build yet.
+When we run it, we'll see that it's actually installing Gradle. That will only happen this first time though, because 
+Gradle isn't currently installed on our system. The script doesn't do much else, because we haven't actually set up 
+the build yet.
 
 The next thing we have to do is to initialize the Gradle build:
 
 [cloud_user@$host]$ ./gradlew init
-If we check with another ls -la command, we'll now see a build.gradle file that wasn't there before. We're going to edit that file (with whatever text editor you prefer -- vi, nano, emacs, etc) and delete what's in there now. The current text is just a comment anyway, so we don't need it. When we're done, the file should look like this (here with comments to explain things, then below that just the required lines):
+If we check with another ls -la command, we'll now see a build.gradle file that wasn't there before. We're going to edit 
+that file (with whatever text editor you prefer -- vi, nano, emacs, etc) and delete what's in there now. The current text 
+is just a comment anyway, so we don't need it. When we're done, the file should look like this (here with comments to explain 
+things, then below that just the required lines):
 
 With comments
 
