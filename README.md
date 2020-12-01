@@ -68,11 +68,17 @@ $ sudo mkdir /opt/gradle
 $ sudo unzip -d /opt/gradle/ ~/gradle-4.7-bin.zip
 $ sudo vi /etc/profile.d/gradle.s
 
-Gradle: Build Automation Tool: download Gradle: https://gradle.org
-  - easily installed via package manager: dependencies, java JDK 7 or higher
-  - install instructions https://gradle.org/install
-       $ wget -O ~/grradle-4.7-bin.zip https://services.gradle.org/distributions/gradle-4.7-bin.zip
-  - to validate:  gradle --version
+- Put this text into gradle.sh:
+
+$ export PATH=$PATH:/opt/gradle/gradle-4.7/bin
+
+- Then set permissions on gradle.sh:
+
+$ sudo chmod 755 /etc/profile.d/gradle.sh
+
+Validate:  
+
+$ gradle --version
 
 
 
