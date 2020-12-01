@@ -80,12 +80,35 @@ $ sudo chmod 755 /etc/profile.d/gradle.sh
 
 $ gradle --version
 
-- Here;s the commands to install the Gradle wrapper: 
+- Here's the commands to install the Gradle wrapper: 
 $ cd ~/
 $ mkdir my-project
 $ cd my-project
 $ gradle wrapper
 $ ./gradlew build
+
+- The Gradle Wrapper:
+    - One of the features of Gradle that we will use is the Graddle Wrapper which is a script that invokes a declared version of Gradle. downloading it beforehand if necessary.
+    - Graddle Wrapper allows Gradle to install using the files from your project's source control.
+- The Wrapper is usefull becuause:
+    - It removes the need to have Gradle installed beforehand in order to run the build.
+    - Ensures the project is always build with a specific version of Gradle.
+    - Let's you build multiple projects with different Gradle version in one system.
+    - Anyone (or any automated process) can run the build quickly and easily - They only need Java
+
+Installing The Gradle Wrapper explanation:
+If you already have a normal Gradle install on your system, you can use it to easily install the wrapper:
+    - $ cd /your/project/root/directory
+    - $ gradle wrapper
+You should also add the gradle to you .gitignore file.
+
+This will place a script file in your project's root directory called gradlew (there's also a gradlew.bat for windows systems).
+    - cd /your/project/root/directory
+    - ./gradlew build
+
+
+
+
 
 
 - Gradle Basics
