@@ -204,6 +204,20 @@ gradle execute sequence:
 ```
 
 - Automated Testing 
+    What is Automated Testing ? 
+        - Automated testing is the automated execution of tests that verify the quality and stability of code. 
+        - Automated tests are usually code themselves, so they are code that is written to test other code. 
+        - Automated tests are often run as part of the build process and are executed using build tools like Gradle.
+
+- Types of Automated Tests
+    There arfe multiple types of automated tests: 
+        - Unit Tests - focus on testing small pieces of code is isolation, Usually a single method or function. 
+        - Integration Tests - test larger portion of an application that are integrated with each other. 
+        - Smoke Tests/Sanity Tests - these are high-level integration test that are very basic, large-scale things like whether or not the application runs, whether aplication enpoints return http 500 errors etc. 
+
+
+
+
 - QUIZ: Build Automation
 - Hands-On: Creating Build Automation with Gradle
 ```
