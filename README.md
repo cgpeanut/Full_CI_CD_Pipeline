@@ -76,11 +76,16 @@ $ export PATH=$PATH:/opt/gradle/gradle-4.7/bin
 
 $ sudo chmod 755 /etc/profile.d/gradle.sh
 
-Validate:  
+- Validate:  
 
 $ gradle --version
 
-
+- Here;s the commands to install the Gradle wrapper: 
+$ cd ~/
+$ mkdir my-project
+$ cd my-project
+$ gradle wrapper
+$ ./gradlew build
 
 
 - Gradle Basics
