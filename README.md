@@ -369,113 +369,41 @@ We need to create a single zip file containing all of the source code. Deploying
 
 Gradle comes with some built-in functionality to facilitate this. We've just got to add a task that utilizes it in order to create this archive. Between task build and build.dependsOn npm_build, we're going to write this zipping task: With Comments
 
-// Create a task that is the Zip type
-    task zip(type: Zip) {
-// Find the files at . (dot) which means "right here in the root of the directory"
-              from ('.') {
-// Grab all of the files in the root directory, not the files AND subdirectories
-// with their files, just the files sitting right in the root directory.
-      		    include "*"
-// These next few lines have double asterisks, which means EVERYTHING. For each line, we want to grab the
-// directory that we've named, and everything (files and subdirectories) below it in the file tree.
-      		    include "bin/**"
-      		    include "data/**"
-      		    include "node_modules/**"
-      		    include "public/**"
-      		    include "routes/**"
-      		    include "views/**"
-      	    }
-// This is the destination where the zip file is going to land. We're putting it in a directory names dist,
-// which is going to be a subdirectory of the root directory.
-      	    destinationDir(file("dist"))
-// We're naming the zip file itself. When we're done, there should be a trainSchedule.zip sitting in the ./dist
-// directory.
-      	    baseName "trainSchedule"
-          }
-
-// This will make the build task call on the zip task. If zip doesn't finish, the build fails.
-          build.dependsOn zip
-// Here, we want to make sure our zip task runs after npm_build    
-          zip.dependsOn npm_build
-Without comments:
-
-task zip(type: Zip) {
-            from ('.') {
-                include "*"
-                include "bin/**"
-                include "data/**"
-                include "node_modules/**"
-                include "public/**"
-                include "routes/**"
-                include "views/**"
-            }
-            destinationDir(file("dist"))
-            baseName "trainSchedule"
-        }
-
-        build.dependsOn zip
-        zip.dependsOn npm_build
-With those additions made, let's execute the Gradle build again to generate the archive:
-
-[cloud_user@$host]$ ./gradlew build
-Oh look! The tests passed and we can see at the end of the output that our zip got built. Let's be sure though. Run an ls, and we should see a dist directory now that wasn't there before. If we do an ls on that dist directory, we should see a trainSchedule.zip file sitting in there.
-
-Commit and Push These Changes to Our GitHub Fork
-The first step in this process is to see what's actually going to get pushed up to GitHub when we commit. To do that, we'll run git status. We're going to get a list of "Untracked files" that include the dist directory. We want to avoid committing the archive, so we're going to edit .gitignore and add dist to it. The file ought to look like this when we're done:
-
-node_modules
-.gradle
-dist
-Now when we build, Git will ignore that dist directory whenever we run a build. If we run another git status, we won't see dist listed in the "Untracked files" output.
-
-Now, to add all of our changes to our fork, run a git add ., and commit it with:
-
-[cloud_user@$host]$ git commit -m "add gradle build"
-Everything is ready, now we can push our fork back up to Git with git push.
-
-Conclusion
-That's it. We've complete the task set before us, which was to set up build automation in Gradle. We created a fork of a GitHub project, created a Gradle build that included some automated tests, and pushed it back up to GitHub. Congratulations. We're done.
-
-Addendum
-Here's the full build.gradle file, minus the comments:
-
 plugins {
-  id "com.moowork.node" version "1.2.0"
+ id "com.moowork.node" version "1.2.0" 
 }
 
 node {
-  download = true
+ download = true
 }
 
 task build
 
-    task zip(type: Zip) {
-        from ('.') {
-		    include "*"
-		    include "bin/**"
-		    include "data/**"
-		    include "node_modules/**"
-		    include "public/**"
-		    include "routes/**"
-		    include "views/**"
-	    }
-	    destinationDir(file("dist"))
-	    baseName "trainSchedule"
+task zip(type: Zip) {
+    from ('.') {
+        include "*"
+        include "bin/**"
+        include "data/**"
+        include "node_modules/**"
+        include "public/**"
+        include "routes/**"
+        include "views/**"
     }
-    build.dependsOn zip
-    zip.dependsOn npm_build
+    destinationDir(file("dist"))
+    baseName "trainSchedule"
+}
 
+build.dependsOn zip
+zip.dependsOn npm_build
 build.dependsOn npm_build
 npm_build.dependsOn npmInstall
 npm_build.dependsOn npm_test
 npm_test.dependsOn npmInstall
+
+
+
+
 Tools
-
-
-
-
-
-
 ```
 ```
 Chapter 4: Continous Integration
