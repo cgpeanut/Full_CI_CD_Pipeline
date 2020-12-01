@@ -224,9 +224,14 @@ gradle execute sequence:
 
         $ ./gradlew npm_test
 - QUIZ: Build Automation
-- Hands-On: Creating Build Automation with Gradle
 
-# Creating Build Automation with Gradle
+*************************************************
+- Hands-On: Creating Build Automation with Gradle
+*************************************************
+***************************************
+- Creating Build Automation with Gradle
+***************************************
+
 Introduction
 Build Automation is an important part of continuous integration, and a necessary component of many automated pipelines. Gradle is a powerful build automation tool. In this lab, we'll step through the process of implementing a basic Gradle build. When we're finished, we'll have a good working knowledge build automation basics in Gradle.
 
