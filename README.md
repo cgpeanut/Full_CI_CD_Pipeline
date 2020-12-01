@@ -106,12 +106,75 @@ This will place a script file in your project's root directory called gradlew (t
     - cd /your/project/root/directory
     - ./gradlew build
 
-
-
-
-
-
 - Gradle Basics
+    A gradle build is defined in a groovy script called "build gradle", located in the root directory of your project. 
+    Use "gradle init" to initialize a new project. This also sets up a gradle warpper for you.
+
+- Running a Gradle Build:
+
+Gradle builds consists a set of tasks that you call from the command line. 
+    - ./gradlew someTask someOtherTask
+This command will run a task named soimeTask, and a task named someOtherTask.
+
+- Defining Tasks
+
+The "build gradle" file controls what tasks are available for you project.
+
+You can define your own task with custom code in "build gradle":
+    task myTask{
+        println "Hello, World!"
+    }
+Most of the tasks you use will come built into other Gradle itself or plugins
+
+- Task Dependencies:
+Gradle uses the concept of task dependencies to determinewhat tasks need to be run for a particular build command:
+    - if you run a task, any other tasks that depend on it will also be run.
+
+Task dependencies also determine the order in which tasks get run:
+    - A Task's dependencies will always run before that tasks
+
+You can define a dependency relationship between tasks in "build gradle" like this:
+    - taskA.dependsOn taskB
+
+- Plugins:
+    Gradle has a huge variety of plugins available, many of them contributed by the community.
+
+    Plugins add all kinds of functionality to Gradle. The usually include pre-built tasks that you can configure to do what you need.
+
+    You can include plugins in your "build gradle" like this:
+        plugins {
+            id "<plugin id>" version "<plugin version>"
+        }
+
+    public opensource plugins located at: https://plugins.gradle.org/
+
+Gradle is a powerful build automation tool, but in order to use it you need to know the basics of how it works. This lesson will
+guide you through the core concepts of Gradle automation, and it will demonstrate creating a simple build.gradle file. After
+completing this lesson, you should have a basic working knowledge of how to implement and execute tasks in Gradle.
+More more information on Gradle, check out the official Gradle site: https://gradle.org
+Here is the final build.gradle from the demo:
+plugins {
+id 'com.moowork.node' version '1.2.0'
+}
+task sayHello {
+doLast {
+println 'Hello, World!'
+}
+}
+task anotherTask {
+doLast {
+println 'This is another task'
+}
+}
+If you have the gradle wrapper installed in your project (for example, by using gradle init), you can run the build defined in this
+build.gradle like so:
+./gradlew sayHello
+
+--
+
+
+
+
 - Automated Testing 
 - QUIZ: Build Automation
 - Hands-On: Creating Build Automation with Gradle
